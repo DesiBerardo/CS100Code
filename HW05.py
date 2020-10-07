@@ -23,9 +23,7 @@ for i in months:
 space()
 
 for i in range(99):
-    if i % 2 == 0:
-        print(i)
-    elif i % 5 == 0:
+    if i % 2 == 0 and i % 5 == 0:
         print(i)
 
 space()

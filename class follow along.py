@@ -1,13 +1,16 @@
+def vowel_counter(list):
+    vowels = "aeiouAEIOU"
+    vowelCount = 0
+    endInVowel = 0
+
+    for i in list:
+        if i[0] in vowels:
+            vowelCount += 1
+        if i[-1] in vowels:
+            endInVowel += 1
+    return [vowelCount, endInVowel]
 
 
+list = ["selection","are","dust","smoke","favorite","story"]
 
-list = [1, 5, 2, 4, 6]
-
-def oddCount(numlist):
-    tally = 0
-    for i in numlist:
-        if i % 2 == 1:
-            tally += 1
-    return tally
-
-print(oddCount(list))
+print(vowel_counter(list))

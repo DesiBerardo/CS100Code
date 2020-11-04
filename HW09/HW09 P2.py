@@ -7,13 +7,19 @@ CS100 113
 def file_stats(in_file):
     file = open(in_file, 'r')
     countLine = 0
+    countCharacter = len(file.read())
+    file.close()
+    file = open(in_file, 'r')
     for line in file:
         countLine += 1
-    countCharacter = file.read()
-
+    file.close()
+    file = open(in_file, 'r')
+    file_text = file.read()
+    file_text = file_text.split()
+    file.close()
 
     print('lines:', countLine)
-    print('words:', )
+    print('words:', len(file_text))
     print('characters:', countCharacter)
 
 file_stats('created_equal.txt')

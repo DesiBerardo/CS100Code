@@ -7,10 +7,15 @@ CS100 113
 def initialLetterCount(wordList):
     dict = {}
     for word in wordList:
-        if word[0] not in dict:
-            dict[word[0]] = 1
-        else:
-            dict[word[0]] += 1
+        if word not in dict:
+            dict[word] = [word]
+    for word in wordList:
+        for letter in word:
+            if letter in dict[word]:
+                print('test')
+                dict[word].append(word)
+
+
     return dict
 
 

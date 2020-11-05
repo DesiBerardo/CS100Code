@@ -9,21 +9,26 @@ def repeat_words(in_file, out_file):
     file1 = open(in_file, 'r')
     file2 = open(out_file, 'w')
 
-    text_strip = file1.read()
-    text_strip = text_strip.lower()
-    text_strip_list = text_strip.split()
+    for line in file1:
+        allWords = []
+        repeatWords = []
 
-    text_list = []
-    for word in text_strip_list:
-        text_list.append(word.strip(string.punctuation))
-    print(text_list)
+        words = line.split()
 
-    for word in text_list:
-        file2.write(word)
+        for word in words:
+            word1 = word.lower()
+            word2 = word1.strip(string.punctuation)
 
-    print(text_strip)
+            if word2 in allWords and word2 not in repeatWords:
+                repeatWords.append(word2)
+            else:
+                allWords.append(word2)
 
-
+        for word in repeatWords:
+            file2.write(word + ' ')
+        file2.write('\n')
+    file1.close()
+    file2.close()
 
 inF = 'catInTheHat.txt'
 outF = 'catout.txt'

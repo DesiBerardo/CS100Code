@@ -1,19 +1,13 @@
-def countVowels(text):
-    wordList = text.split()
-    vowels = 'aeiou'
-    d = {}
-    for word in wordList:
-        if word not in d:
-            d[word] = 0
-        for letter in word:
-            if letter in vowels:
-                d[word] += 1
-    return d
+import dog
 
+sugar = dog.Dog('Sugar', 'Border Collie')
 
-
-
-
-
-abe = "government of the people by the people for the people shall not perish"
-print(countVowels(abe))
+print(sugar.tricks)
+sugar.teach('frisbee')
+print(sugar.tricks)
+sugar.knows('frisbee')
+sugar.teach('fetch')
+sugar.knows('fetch')
+sugar.knows('arithmetic')
+print(dog.Dog.species)
+print(sugar.species)
